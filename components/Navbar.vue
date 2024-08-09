@@ -1,7 +1,9 @@
 <script setup>
 const appConfig = useAppConfig()
 const colors = appConfig.ui.colors
+const gries = ['zinc', 'cool', 'stone', 'neutral', 'slate']
 const themeColor = useCookie('themeColor')
+const themeGray = useCookie('themeGray')
 const colorMode = useColorMode()
 const isOpen = ref(false)
 const popoverOpen = ref(false)
@@ -13,11 +15,15 @@ const changeTheme = (name) => {
     appConfig.ui.primary = name
     themeColor.value = name
 }
+const changeThemeGray = (name) => {
+    appConfig.ui.gray = name
+    themeGray.value = name
+}
 </script>
 
 <template>
     <div class="sticky top-0 z-10">
-        <nav class="flex justify-between  items-center shadow-md py-2 px-5 rounded bg-white dark:bg-gray-950">
+        <nav class="flex justify-between  items-center shadow-md py-2 px-5 rounded bg-white dark:bg-gray-800">
             <div>
                 <NuxtLink to="/">
                     <NuxtImg src="/logo.png" sizes="sm:150px md:260px" class="fill-red-500" loading="lazy" />
@@ -51,6 +57,13 @@ const changeTheme = (name) => {
                                     @click="changeTheme(color)" />
                             </UTooltip>
                         </div>
+                        <UDivider class="mb-5" />
+                        <div class="p-4 grid grid-cols-4 gap-4">
+                            <UTooltip v-for="gray in gries" :text="gray" class="capitalize">
+                                <Icon name="ic:baseline-circle" class="text-gray-500 cursor-pointer text-xl"
+                                    @click="changeThemeGray(gray)" />
+                            </UTooltip>
+                        </div>
                     </template>
                 </UPopover>
                 <UButton icon="uil:search" variant="ghost" class="hidden md:block"
@@ -63,19 +76,18 @@ const changeTheme = (name) => {
                     <template #header>
                         <UButton color="gray" variant="ghost" size="sm" icon="i-heroicons-x-mark-20-solid"
                             class="flex sm:hidden absolute end-5 top-5 z-10" square padded @click="isOpen = false" />
-
                         <NuxtLink to="/">
                             <NuxtImg src="/logo.png" sizes="sm:150px md:260px" class="fill-red-500" loading="lazy" />
                         </NuxtLink>
                     </template>
 
                     <div class="flex flex-col gap-10">
-                        <div class="flex gap-1 flex-row-reverse">
+                        <div class="flex gap-1">
                             <UInput type="search" placeholder="جستوجو کنید..." class="w-full" />
                             <UButton icon="uil:search" />
                         </div>
                         <div>
-                            <ul class="flex flex-col gap-5 items-end  mx-5">
+                            <ul class="flex flex-col gap-5 mx-5">
                                 <li>
                                     <NuxtLink to="/">خانه</NuxtLink>
                                 </li>
@@ -90,7 +102,7 @@ const changeTheme = (name) => {
                                 </li>
                             </ul>
                         </div>
-                        <div class="text-end">
+                        <div>
                             <p class="text-gray-400">توضیحات سایت</p>
                         </div>
                     </div>
@@ -107,7 +119,7 @@ const changeTheme = (name) => {
                     }
                 }">
                 <template #header>
-                    <div class="flex items-center justify-end">
+                    <div class="flex items-center">
                         <UButton color="red" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1"
                             @click="searchDialog = false" />
                     </div>
@@ -117,7 +129,7 @@ const changeTheme = (name) => {
                         <UInput type="search" size="xl" class="w-full" placeholder="تلگرام...." />
                         <UButton icon="uil:search" size="xl" />
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="grid grid-cols-2 gap-5">
                         <NuxtLink to="#">
                             <NuxtImg src="logo.png" />
                         </NuxtLink>
@@ -133,7 +145,7 @@ const changeTheme = (name) => {
                     </div>
                 </div>
                 <template #footer>
-                    <div class="flex items-center justify-end">
+                    <div class="flex items-center">
                         <UButton color="red" label="بستن" trailing icon="i-heroicons-x-mark-20-solid" class="-my-1"
                             @click="searchDialog = false" />
                     </div>

@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@iconify-json/ic": "^1.1.18",
     "@iconify-json/uil": "^1.1.9",
     "@nuxt/devtools": "latest",
     "@nuxt/icon": "^1.4.5",

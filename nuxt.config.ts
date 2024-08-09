@@ -14,6 +14,10 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-08-08",
   app: {
     head: {
+      htmlAttrs: {
+        dir: 'rtl',
+        lang: "fa"
+      },
       link: [
         {
           href: 'https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css',
