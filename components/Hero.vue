@@ -55,9 +55,10 @@ tryOnMounted(() => {
 
 <template>
     <div dir="ltr">
-        <div class="w-full flex items-center justify-between mt-10 hidden md:block">
+        <div
+            class="w-full flex items-center justify-between hidden md:block shadow-xl rounded bg-white dark:bg-gray-800">
             <UCarousel ref="carouselRef" v-slot="{ item }" :items="items" :ui="{ item: 'basis-full' }"
-                class="rounded-lg overflow-hidden">
+                class="rounded-lg overflow-hidden p-5">
                 <div class="flex justify-between items-center gap-5">
                     <div class="flex flex-col justify-between w-1/2 h-full" dir="rtl">
                         <div class="flex flex-col gap-5 justify-center">
