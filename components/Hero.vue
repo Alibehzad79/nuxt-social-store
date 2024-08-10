@@ -1,4 +1,11 @@
 <script setup lang="ts">
+const load = ref(true)
+tryOnMounted(()=>{
+    load.value = false
+})
+
+
+
 const items = [
     {
         img: 'https://picsum.photos/1920/1080?random=1',
@@ -54,9 +61,12 @@ tryOnMounted(() => {
 </script>
 
 <template>
-    <div dir="ltr">
+    <div>
+        <div v-if="load" class="text-center">
+            <Icon name="svg-spinners:bars-rotate-fade" />
+        </div>
         <div
-            class="w-full flex items-center justify-between hidden md:block rounded bg-white dark:bg-gray-800">
+            class="w-full flex items-center justify-between hidden md:block rounded bg-white dark:bg-gray-800" v-if="!load">
             <UCarousel ref="carouselRef" v-slot="{ item }" :items="items" :ui="{ item: 'basis-full' }"
                 class="rounded-lg overflow-hidden p-5">
                 <div class="flex justify-between items-center gap-5">

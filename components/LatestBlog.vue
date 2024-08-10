@@ -1,10 +1,17 @@
 <script setup>
+const load = ref(true)
+tryOnMounted(()=>{
+    load.value = false
+})
 
 </script>
 
 <template>
     <div>
-        <div class="flex flex-col gap-5 items-center justify-center">
+        <div v-if="load" class="text-center">
+            <Icon name="svg-spinners:bars-rotate-fade" />
+        </div>
+        <div class="flex flex-col gap-5 items-center justify-center" v-if="!load">
             <div class="flex flex-col gap-2 items-center">
                 <strong class="text-3xl">آخرین وبلاگ</strong>
                 <p class="text-gray-500">آخرین مقاله های نوشته شده در سایت</p>

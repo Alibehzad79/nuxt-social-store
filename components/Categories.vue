@@ -1,4 +1,8 @@
 <script setup>
+const load = ref(true)
+tryOnMounted(() => {
+    load.value = false
+})
 
 const categories = ['همه', 'تلگرام', 'اینستاگرام', 'یوتیوب']
 const selected = ref(categories[0])
@@ -7,14 +11,17 @@ const selected = ref(categories[0])
 
 <template>
     <div>
-        <div class="flex flex-col gap-5">
+        <div v-if="load" class="text-center">
+            <Icon name="svg-spinners:bars-rotate-fade" />
+        </div>
+        <div class="flex flex-col gap-5" v-if="!load">
             <div class="flex flex-col md:flex-row items-center justify-between gap-5">
                 <div class="flex flex-col gap-5">
                     <strong class="text-3xl flex items-center gap-2">
                         <Icon name="uil:tag" class="text-primary animate-bounce " />
                         <span>خدمات ما</span>
                     </strong>
-                    <p>سرویس های ما دارای بهترین کیفیت و به صرفه ترین قیمت هستند.</p>
+                    <p class="text-gray-500">سرویس های ما دارای بهترین کیفیت و به صرفه ترین قیمت هستند.</p>
                 </div>
                 <div>
                     <USelect color="white" variant="outline" icon="uil:filter" :options="categories" v-model="selected"

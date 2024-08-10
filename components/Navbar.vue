@@ -1,4 +1,10 @@
 <script setup>
+
+const load = ref(true)
+tryOnMounted(() => {
+    load.value = false
+})
+
 const appConfig = useAppConfig()
 const colors = appConfig.ui.colors
 const gries = ['zinc', 'cool', 'stone', 'neutral', 'slate']
@@ -22,7 +28,10 @@ const changeThemeGray = (name) => {
 </script>
 
 <template>
-    <div class="sticky top-0 z-10">
+    <div v-if="load" class="text-center">
+        <Icon name="svg-spinners:bars-rotate-fade" />
+    </div>
+    <div class="sticky top-0 z-10" v-if="!load">
         <nav class="flex justify-between  items-center shadow-md py-2 px-5 rounded bg-white dark:bg-gray-800">
             <div>
                 <NuxtLink to="/">
