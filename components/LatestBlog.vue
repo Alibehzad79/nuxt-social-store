@@ -11,9 +11,9 @@ tryOnMounted(()=>{
         <div v-if="load" class="text-center">
             <Icon name="svg-spinners:bars-rotate-fade" />
         </div>
-        <div class="flex flex-col gap-5 items-center justify-center" v-if="!load">
+        <div class="flex flex-col gap-5 items-center justify-center mt-10" v-if="!load">
             <div class="flex flex-col gap-2 items-center">
-                <strong class="text-3xl">آخرین وبلاگ</strong>
+                <strong class="text-3xl">آخرین وبلاگ <Icon name="uil:book" class="text-primary" /></strong>
                 <p class="text-gray-500">آخرین مقاله های نوشته شده در سایت</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">

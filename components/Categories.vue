@@ -24,13 +24,13 @@ const selected = ref(categories[0])
                     <p class="text-gray-500">سرویس های ما دارای بهترین کیفیت و به صرفه ترین قیمت هستند.</p>
                 </div>
                 <div>
-                    <USelect color="white" variant="outline" icon="uil:filter" :options="categories" v-model="selected"
+                    <USelect color="secondary" variant="outline" icon="uil:filter" :options="categories" v-model="selected"
                         size="xl" placeholder="فیلتر کردن" />
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <NuxtLink to="#" v-for="category in 8" class="hover:scale-110 duration-300">
-                    <div class="flex flex-col rounded gap-5 p-5 bg-white dark:bg-gray-800" :key="category">
+                    <div class="flex flex-col rounded gap-5 p-5 bg-gray-100 dark:bg-gray-800" :key="category">
                         <img :src="`https://picsum.photos/1920/1080?random=${category}`" :alt="selected"
                             class="rounded">
                         <strong class="text-xl">{{ selected }}</strong>
