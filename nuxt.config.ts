@@ -28,5 +28,8 @@ export default defineNuxtConfig({
         class: "bg-gray-200 dark:bg-gray-900"
       },
     }
-  }
+  },
+  image: {
+    provider: 'netlify',
+  },
 })
