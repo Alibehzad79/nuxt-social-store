@@ -24,7 +24,7 @@ const selected = ref(categories[0])
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <NuxtLink to="#" v-for="category in 8" class="hover:scale-110 duration-300">
                     <div class="flex flex-col rounded gap-5 p-5 shadow-xl bg-white dark:bg-gray-800" :key="category">
-                        <NuxtImg :src="`https://picsum.photos/1920/1080?random=${categories[category]}`" format="png" />
+                        <NuxtImg :src="`https://picsum.photos/1920/1080?random=${categories.indexOf(category)}`" format="png" />
                         <strong class="text-3xl md:text-4xl">{{ selected }}</strong>
                     </div>
                 </NuxtLink>
