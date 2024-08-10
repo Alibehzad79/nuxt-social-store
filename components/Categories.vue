@@ -17,14 +17,14 @@ const selected = ref(categories[0])
                     <p>سرویس های ما دارای بهترین کیفیت و به صرفه ترین قیمت هستند.</p>
                 </div>
                 <div>
-                    <USelect color="white" variant="outline" icon="uil:filter" :options="categories"
-                        v-model="selected" size="xl" placeholder="فیلتر کردن" />
+                    <USelect color="white" variant="outline" icon="uil:filter" :options="categories" v-model="selected"
+                        size="xl" placeholder="فیلتر کردن" />
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <NuxtLink to="#" v-for="category in 8" class="hover:scale-110 duration-300">
                     <div class="flex flex-col rounded gap-5 p-5 shadow-xl bg-white dark:bg-gray-800" :key="category">
-                        <NuxtImg src="https://www.hollywoodreporter.com/wp-content/uploads/2012/12/img_logo_blue.jpg" />
+                        <NuxtImg src="https://picsum.photos/1920/1080?random=2" />
                         <strong class="text-3xl md:text-4xl">{{ selected }}</strong>
                     </div>
                 </NuxtLink>
