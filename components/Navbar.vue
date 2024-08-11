@@ -31,7 +31,7 @@ const changeThemeGray = (name) => {
     <div v-if="load" class="text-center">
         <Icon name="svg-spinners:bars-rotate-fade" />
     </div>
-    <div class="sticky top-0 z-10" v-if="!load">
+    <div class="sticky top-0 z-10 mt-5" v-if="!load">
         <nav class="flex justify-between  items-center shadow-md py-2 px-5 rounded bg-gray-100 dark:bg-gray-800">
             <div>
                 <NuxtLink to="/">
@@ -92,8 +92,8 @@ const changeThemeGray = (name) => {
 
                     <div class="flex flex-col gap-10">
                         <div class="flex gap-1">
-                            <UInput type="search" placeholder="جستوجو کنید..." class="w-full" />
-                            <UButton icon="uil:search" />
+                            <UInput type="search" placeholder="جستوجو کنید..." class="w-full" size="xl" />
+                            <UButton icon="uil:search" size="xl" />
                         </div>
                         <div>
                             <ul class="flex flex-col gap-5 mx-5">

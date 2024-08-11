@@ -12,9 +12,11 @@ tryOnBeforeMount(() => {
 </script>
 
 <template>
-  <UContainer class="mt-5">
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </UContainer>
+  <div>
+    <UContainer>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </UContainer>
+  </div>
 </template>
