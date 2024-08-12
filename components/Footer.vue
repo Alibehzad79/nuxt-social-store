@@ -1,11 +1,18 @@
 <script setup>
-
+const load = ref(true)
+tryOnMounted(() => {
+    load.value = false
+})
 
 </script>
 
 <template>
     <div>
-        <footer class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5 justify-items-center mt-10">
+        <div v-if="load" class="text-center">
+            <Icon name="svg-spinners:bars-rotate-fade" />
+        </div>
+        <footer v-if="!load"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5 justify-items-center mt-10">
             <div class="flex flex-col gap-5 items-center">
                 <strong class="text-3xl font-bold">خدمات فضای مجازی</strong>
                 <p>درباره سایت</p>

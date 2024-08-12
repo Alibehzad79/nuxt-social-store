@@ -4,6 +4,7 @@
 
 body {
     font-family: Vazirmatn, sans-serif;
+    @apply bg-[url('/public/bg-light.jpg')] dark:bg-[url('/public/bg-dark.jpg')];
 }
 
 .outer-link-active,

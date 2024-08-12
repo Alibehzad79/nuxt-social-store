@@ -32,7 +32,7 @@ const changeThemeGray = (name) => {
         <Icon name="svg-spinners:bars-rotate-fade" />
     </div>
     <div class="sticky top-4 md:top-0 z-10 mt-5" v-if="!load">
-        <nav class="flex justify-between  items-center py-5 md:py-2 px-5 bg-white dark:bg-gray-900">
+        <nav class="flex justify-between  items-center py-5 md:py-2 px-5 bg-white rounded dark:bg-gray-900">
             <div>
                 <NuxtLink to="/">
                     <NuxtImg src="/logo.png" sizes="sm:150px md:260px" class="fill-red-500" loading="lazy" />
