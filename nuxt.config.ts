@@ -25,7 +25,7 @@ export default defineNuxtConfig({
         }
       ],
       bodyAttrs: {
-        class: "bg-gray-200 dark:bg-gray-900"
+        class: "bg-white dark:bg-gray-900"
       },
     }
   },

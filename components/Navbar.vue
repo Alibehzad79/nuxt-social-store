@@ -31,8 +31,8 @@ const changeThemeGray = (name) => {
     <div v-if="load" class="text-center">
         <Icon name="svg-spinners:bars-rotate-fade" />
     </div>
-    <div class="sticky top-0 z-10 mt-5" v-if="!load">
-        <nav class="flex justify-between  items-center shadow-md py-2 px-5 rounded bg-gray-100 dark:bg-gray-800">
+    <div class="sticky top-4 md:top-0 z-10 mt-5" v-if="!load">
+        <nav class="flex justify-between  items-center py-5 md:py-2 px-5 bg-white dark:bg-gray-900">
             <div>
                 <NuxtLink to="/">
                     <NuxtImg src="/logo.png" sizes="sm:150px md:260px" class="fill-red-500" loading="lazy" />
@@ -120,13 +120,13 @@ const changeThemeGray = (name) => {
         </nav>
         <UModal v-model="searchDialog" class="hidden md:block" fullscreen>
             <UCard :ui="{
-                    base: 'h-full flex flex-col',
-                    rounded: '',
-                    divide: 'divide-y divide-gray-100 dark:divide-gray-800',
-                    body: {
-                        base: 'grow'
-                    }
-                }">
+        base: 'h-full flex flex-col',
+        rounded: '',
+        divide: 'divide-y divide-gray-100 dark:divide-gray-800',
+        body: {
+            base: 'grow'
+        }
+    }">
                 <template #header>
                     <div class="flex items-center">
                         <UButton color="red" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1"

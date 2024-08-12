@@ -66,7 +66,7 @@ tryOnMounted(() => {
             <Icon name="svg-spinners:bars-rotate-fade" />
         </div>
         <div
-            class="w-full flex items-center justify-between hidden md:block rounded bg-gray-100 dark:bg-gray-800" v-if="!load">
+            class="w-full flex items-center justify-between hidden md:block rounded border dark:border-gray-700 dark:bg-gray-800" v-if="!load">
             <UCarousel ref="carouselRef" v-slot="{ item }" :items="items" :ui="{ item: 'basis-full' }"
                 class="rounded-lg overflow-hidden p-5">
                 <div class="flex justify-between items-center gap-5">

@@ -1,11 +1,13 @@
 <script setup>
 
+
 </script>
 
 <template>
     <div class="flex flex-col gap-5 relative">
         <Navbar />
         <slot />
+        <Footer />
         <div class="absolute z-10 bottom-0 sticky w-32 right-10">
             <NuxtLink to="#">
                 <UChip text="پشتیبانی" size="2xl">
